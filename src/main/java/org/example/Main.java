@@ -56,8 +56,11 @@ public class Main {
 
         // Запись файла
         // Вопрос к преподавателю !!! Как создать file без наменования пользователя, я пробывал %USERPROFILE%, не помогло.
-        File file = new File("C:/Users/aleks/Desktop/" + nameOfFile);
+        String test = System.getProperty("user.home");
+        System.out.println(test + "/Desktop/" + nameOfFile);
+        File file = new File(test + "/Desktop/" + nameOfFile);
         ImageIO.write(image, "jpg",file);
+
 
         response.close();
         httpClient.close();
